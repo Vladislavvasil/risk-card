@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Чек-лист по синдрому больного здания и учебная оценка риска.">
+  <title>Чек-лист и оценка риска — Синдром больного здания</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Перейти к основному содержанию</a>
+
+  <header class="hero hero--compact">
+    <div class="hero__glow hero__glow--a" aria-hidden="true"></div>
+    <div class="hero__glow hero__glow--b" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <nav class="topnav" aria-label="Основная навигация">
+        <a class="topnav__link" href="index.html">Обзор</a>
+        <a class="topnav__link topnav__link--active" href="checklist.html" aria-current="page">Чек-лист и оценка риска</a>
+      </nav>
+
+      <p class="badge">Учебный проект</p>
+      <h1 class="hero__title hero__title--sm">Чек-лист и оценка риска</h1>
+      <p class="hero__lead">
+        Отметьте пункты, которые уже выполнены в вашем помещении.
+        Когда закончите, нажмите кнопку внизу — страница покажет учебную
+        оценку риска. Отметки никуда не отправляются и не сохраняются.
+      </p>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+
+    <!-- Вводная карточка -->
+    <section class="card" aria-labelledby="intro-title">
+      <h2 id="intro-title">Как это работает</h2>
+      <p>
+        Восемь пунктов описывают основные меры, которые снижают риск,
+        связанный с качеством воздуха в помещении. Оценка риска показывает, насколько полно выполнены рекомендации, и не заменяет
+        заключение специалиста.
+      </p>
+    </section>
+
+    <!-- Чек-лист -->
+    <section class="card" aria-labelledby="checklist-title">
+      <h2 id="checklist-title">Чек-лист действий</h2>
+      <p>
+        Отмечайте пункты, которые вы уже выполнили в своём помещении.
+      </p>
+
+      <form id="checklist-form" class="checklist-form" novalidate>
+        <fieldset class="checklist-fieldset">
+          <legend class="visually-hidden">Пункты чек-листа</legend>
+
+          <ul class="checklist" id="checklist">
+            <li class="checklist__item">
+              <input type="checkbox" id="item-1" class="checklist__input">
+              <label for="item-1" class="checklist__label">
+                <span class="checklist__text">Проверить, работает ли приточная вентиляция и вытяжка</span>
+                <span class="checklist__status" data-status>не выполнено</span>
+              </label>
+            </li>
+            <li class="checklist__item">
+              <input type="checkbox" id="item-2" class="checklist__input">
+              <label for="item-2" class="checklist__label">
+                <span class="checklist__text">Проветривать несколько раз в день настежь по 10 минут</span>
+                <span class="checklist__status" data-status>не выполнено</span>
+              </label>
+            </li>
+            <li class="checklist__item">
+              <input type="checkbox" id="item-3" class="checklist__input">
+              <label for="item-3" class="checklist__label">
+                <span class="checklist__text">Измерить температуру воздуха и сравнить с рекомендуемой</span>
+                <span class="checklist__status" data-status>не выполнено</span>
+              </label>
+            </li>
+            <li class="checklist__item">
+              <input type="checkbox" id="item-4" class="checklist__input">
+              <label for="item-4" class="checklist__label">
+                <span class="checklist__text">Проверить относительную влажность воздуха</span>
+                <span class="checklist__status" data-status>не выполнено</span>
+              </label>
+            </li>
+            <li class="checklist__item">
+              <input type="checkbox" id="item-5" class="checklist__input">
+              <label for="item-5" class="checklist__label">
+                <span class="checklist__text">Запланировать профессиональную чистку кондиционера (не реже раза в три месяца)</span>
+                <span class="checklist__status" data-status>не выполнено</span>
+              </label>
+            </li>
+            <li class="checklist__item">
+              <input type="checkbox" id="item-6" class="checklist__input">
+              <label for="item-6" class="checklist__label">
+                <span class="checklist__text">Найти и убрать источники: плесень, следы табачного дыма, свежую химию</span>
+                <span class="checklist__status" data-status>не выполнено</span>
+              </label>
+            </li>
+            <li class="checklist__item">
+              <input type="checkbox" id="item-7" class="checklist__input">
+              <label for="item-7" class="checklist__label">
+                <span class="checklist__text">Убрать или изолировать новые синтетические материалы</span>
+                <span class="checklist__status" data-status>не выполнено</span>
+              </label>
+            </li>
+            <li class="checklist__item">
+              <input type="checkbox" id="item-8" class="checklist__input">
+              <label for="item-8" class="checklist__label">
+                <span class="checklist__text">Добавить растения с большими листьями, увлажнитель или воздухоочиститель</span>
+                <span class="checklist__status" data-status>не выполнено</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <div class="progress-block">
+          <div class="progress-block__top">
+            <label class="progress-block__label" for="checklist-progress">Прогресс</label>
+            <span class="progress-block__counter" id="checklist-counter" aria-live="polite">Выполнено 0 из 8</span>
+          </div>
+          <progress id="checklist-progress" class="progress" value="0" max="8">0 из 8</progress>
+        </div>
+
+        <div class="checklist-actions">
+          <button type="button" class="btn btn--primary" id="check-all">Отметить все</button>
+          <button type="button" class="btn" id="reset-all">Сбросить отметки</button>
+          <button type="button" class="btn btn--cta" id="show-result">Показать результат</button>
+        </div>
+
+        <p class="checklist-hint" id="checklist-hint" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Результат оценки риска -->
+    <section class="card risk" id="risk-result" hidden aria-labelledby="risk-title">
+      <h2 id="risk-title">Результат оценки</h2>
+
+      <div class="risk__header">
+        <p class="risk__badge" id="risk-badge">—</p>
+        <p class="risk__score" id="risk-score">0 из 8</p>
+      </div>
+
+      <p class="risk__summary" id="risk-summary"></p>
+
+      <h3>Что сделать в первую очередь</h3>
+      <ul class="risk__list" id="risk-list"></ul>
+
+      <p class="small-note">
+        Это учебная оценка. Она не является медицинским заключением,
+        не заменяет консультацию специалиста и не учитывает индивидуальные
+        особенности помещения. Итоговое решение о помощи принимает специалист.
+      </p>
+    </section>
+
+    <!-- Возврат на главную -->
+    <section class="card" aria-labelledby="back-title">
+      <h2 id="back-title">Вернуться к материалу</h2>
+      <p>
+        Если хотите освежить в памяти симптомы, причины и рекомендации —
+        вернитесь на страницу с обзором.
+      </p>
+      <p>
+        <a class="btn" href="index.html">Назад к обзору</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Учебный проект по HTML, CSS и JavaScript. Данные не сохраняются.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
